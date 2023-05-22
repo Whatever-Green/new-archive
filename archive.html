@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+</head>
+<body>
+    <p>wait for page to load Status of main server: ONLINE</p> <a href="index.html">home</a>
+    <iframe src="http://new-archive.22web.org/?i=2" style="position:fixed; top:20px; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:50px; padding:0; overflow:hidden; z-index:999999;">
+        Your browser doesn't support iframes
+    </iframe>
+    v   <div id="trailer">
+        <p> </p>
+        <h2>*</h2>
+      </div>
+ <style>
+    .video-container {
+    position: relative;
+    padding-bottom: 100%;
+    height:100%;
+
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin:0px;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+            background-color: #231e1d;
+        }
+        body a{
+            color: aliceblue;
+        }
+        p{
+            font-size: 20px;
+            color: aliceblue;
+        }
+
+        body:hover > #trailer {
+opacity: 1;
+}
+
+#trailer {
+
+    
+
+position: fixed;
+left: 0px;
+top: 0px;
+z-index: 10000;
+
+pointer-events: none;
+opacity: 0;
+transition: opacity 500ms ease;
+
+display: grid;
+place-items: center;
+}
+
+#trailer:not([data-type=""]) > #trailer-icon {
+opacity: 1;
+}
+
+#trailer-icon {
+font-size: 6px;
+line-height: 4px;
+
+opacity: 0;
+transition: opacity 400ms ease;
+}
+ </style>
+</body>
+</html>

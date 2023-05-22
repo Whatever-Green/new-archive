@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+  <video autoplay muted loop id="myVideo">
+    <source src="photos/hello.webm" type="video/mp4">
+  </video>
+
+  </div>
+    <div id="trailer">
+        <p> </p>
+        <h2>*</h2>
+      </div>
+      
+<div class="body">
+    <div class="Heading">
+        <p class="aligncenter">
+            <img src="Screenshot 2023-05-15 192015.png" alt="" height="100px" wid>
+        </p>
+
+
+    </div>
+    
+    
+  
+    
+    <div id="g">
+      <p class="links">
+        <p></p>
+        <a class="liks" href="archive.html">.the archive.</a>
+        <p></p>
+        <a class="" href="login.html">.login.</a>
+        <p></p>
+        <a class="" href="about.html">.about.</a>
+      </p>
+        <footer>
+         (c) 2022-to like the end of time i guess
+        </footer>
+      </div>
+    </div>
+    <script>
+        const trailer = document.getElementById("trailer");
+
+const animateTrailer = (e, interacting) => {
+  const x = e.clientX - trailer.offsetWidth / 2,
+        y = e.clientY - trailer.offsetHeight / 2;
+  
+  const keyframes = {
+    transform: `translate(${x}px, ${y}px) scale(${interacting ? 8 : 1})`
+  }
+  
+  trailer.animate(keyframes, { 
+    duration: 800, 
+    fill: "forwards" 
+  });
+}
+
+const getTrailerClass = type => {
+  switch(type) {
+    case "video":
+      return "fa-solid fa-play";
+    default:
+      return "fa-solid fa-arrow-up-right"; 
+  }
+}
+
+window.onmousemove = e => {
+  const interactable = e.target.closest(".interactable"),
+        interacting = interactable !== null;
+  
+  const icon = document.getElementById("trailer-icon");
+  
+  animateTrailer(e, interacting);
+  
+  trailer.dataset.type = interacting ? interactable.dataset.type : "";
+  
+  if(interacting) {
+    icon.className = getTrailerClass(interactable.dataset.type);
+  }
+}
+
+$('#overlay').modal('show');
+
+setTimeout(function() {
+    $('#overlay').modal('hide');
+}, 5000);
+    </script>
+    
+    </div>    
+</div>
+
+
+<style>
+        body{
+            background-color: #231e1d;
+        }
+        body a{
+            color: aliceblue;
+        }
+    /* Style the video: 100% width and height to cover the entire window */
+    footer{
+   
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    }
+    a{
+      font-size: 30px;
+      font-weight: 100;
+    }
+    .links{
+      font-size: 30px;
+      border-bottom: 5px  #ff8686;
+    text-decoration: none;
+    }
+ #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100;
+  }
+  
+  /* Add some content at the bottom of the video/page */
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  body{
+    font-family: 'Times New Roman', Times, serif;
+}
+  /* Style the button used to pause/play the video */
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  } 
+
+
+
+.body{
+padding: 155px 0;
+text-align: center;
+
+        }
+#whatevergreen{
+    padding-bottom: 0..01em;
+    margin-bottom: 0px;
+}
+#joshuanathan{
+    padding-top: 0..01em;
+    margin-top: 0px;
+}
+.w.g{
+    padding-bottom: 50px;
+}
+.Clock{
+text-align: center;
+}
+.Heading, Banner-Image, img{
+text-align: center;
+font-size: 20px;
+}
+
+.aligncenter {
+text-align: center;
+  
+}
+
+#links, a{
+  color: #aea7a7 !important;
+  font-size: 30px;
+  letter-spacing: 5px;
+  font-kerning: 12px;
+}
+
+
+/*For C*/
+
+
+
+/*for mouse trailer*/
+
+
+body {
+
+height: 100vh;    
+
+
+display: flex;
+align-items: center;
+justify-content: center;
+gap: clamp(10px, 4vw, 100px);
+}
+
+body:hover > #trailer {
+opacity: 1;
+}
+
+#trailer {
+
+    
+
+position: fixed;
+left: 0px;
+top: 0px;
+z-index: 10000;
+
+pointer-events: none;
+opacity: 0;
+transition: opacity 500ms ease;
+
+display: grid;
+place-items: center;
+}
+
+#trailer:not([data-type=""]) > #trailer-icon {
+opacity: 1;
+}
+
+#trailer-icon {
+font-size: 6px;
+line-height: 4px;
+
+opacity: 0;
+transition: opacity 400ms ease;
+}
+
+.interactable {
+aspect-ratio: 1 / 1.5;
+width: clamp(120px, 40vmin, 600px);
+background-position: center 50%;
+background-size: 100%;  
+opacity: 0.4;
+
+transition: background-size 400ms ease, opacity 400ms ease;
+}
+
+.interactable:hover {
+background-size: 105%;
+opacity: 0.8;
+}
+
+/* -- YouTube Link Styles -- */
+
+body.menu-toggled > .meta-link > span {
+color: rgb(30, 30, 30);
+}
+
+#source-link {
+bottom: 60px;
+}
+
+#source-link > i {
+color: rgb(94, 106, 210);
+}
+
+#yt-link > i {
+color: rgb(239, 83, 80);
+}
+
+.meta-link {
+align-items: center;
+backdrop-filter: blur(3px);
+background-color: rgba(255, 255, 255, 0.05);
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 6px;
+bottom: 10px;
+box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+cursor: pointer;  
+display: inline-flex;
+gap: 5px;
+left: 10px;
+padding: 10px 20px;
+position: fixed;
+text-decoration: none;
+transition: background-color 400ms, border-color 400ms;
+z-index: 10000;
+}
+
+.meta-link:hover {
+background-color: rgba(255, 255, 255, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.meta-link > i, .meta-link > span {
+height: 20px;
+line-height: 20px;
+}
+
+.meta-link > span {
+color: white;
+font-family: "Rubik", sans-serif;
+font-weight: 500;
+}
+a:link {
+      text-decoration: none;
+      color: #000;
+}
+
+a:visited {
+      text-decoration: none;
+      color: #000;
+}
+
+a:hover {
+      text-decoration: none;
+      color: #000;
+}
+
+a:active {
+      text-decoration: none;
+      color: #000;
+}
+</style>
+</body>
+</html>
